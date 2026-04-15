@@ -55,9 +55,9 @@ const initialProviderState = Object.fromEntries(
 ) as Record<ProviderId, ProviderState>;
 
 const defaultSlots: CandidateSlot[] = [
-  { id: "candidate-1", provider: "openrouter", model: "openai/gpt-4o-mini" },
-  { id: "candidate-2", provider: "openrouter", model: "anthropic/claude-3.5-haiku" },
-  { id: "candidate-3", provider: "groq", model: "llama-3.3-70b-versatile" },
+  { id: "candidate-1", provider: "openrouter", model: "openai/gpt-5.4" },
+  { id: "candidate-2", provider: "openrouter", model: "anthropic/claude-sonnet-4.6" },
+  { id: "candidate-3", provider: "openrouter", model: "google/gemini-3.1-pro-preview" },
 ];
 
 export function ArenaApp() {

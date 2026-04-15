@@ -30,6 +30,8 @@ Supported out of the box:
 - Ollama
 - Any OpenAI-compatible endpoint
 
+The default model list is intentionally modern: OpenRouter slots start with GPT-5.4, Claude 4.6, Gemini 3.1, and Qwen 3.6 family IDs. Direct provider cards also use current-generation defaults, but the recommended workflow is still to click `Load models` after adding a key so the app syncs the exact IDs available on your account.
+
 Keys are stored in browser localStorage and sent only to the local Next.js API route for the active request. The app does not store provider keys server-side.
 
 ## Features

@@ -77,7 +77,7 @@ export const demoAnswers: BattleAnswer[] = [
     id: "demo-a",
     slot: "A",
     provider: "openrouter",
-    model: "openai/gpt-4o-mini",
+    model: "openai/gpt-5.4",
     status: "ok",
     latencyMs: 1280,
     text:
@@ -87,7 +87,7 @@ export const demoAnswers: BattleAnswer[] = [
     id: "demo-b",
     slot: "B",
     provider: "anthropic",
-    model: "claude-3-5-haiku-latest",
+    model: "claude-sonnet-4-6",
     status: "ok",
     latencyMs: 1760,
     text:
@@ -96,8 +96,8 @@ export const demoAnswers: BattleAnswer[] = [
   {
     id: "demo-c",
     slot: "C",
-    provider: "groq",
-    model: "llama-3.3-70b-versatile",
+    provider: "google",
+    model: "gemini-3.1-pro-preview",
     status: "ok",
     latencyMs: 620,
     text:
