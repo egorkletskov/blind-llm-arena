@@ -1,26 +1,170 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #10100e;
+  --foreground: #f4f0e7;
+  --accent: #f6a63a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-plex-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
 }
 
 body {
+  min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+select option {
+  background: #171717;
+  color: #f4f0e7;
+}
+
+input[type="range"] {
+  accent-color: var(--accent);
+}
+
+.arena-input {
+  width: 100%;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.26);
+  padding: 0.8rem 0.9rem;
+  color: #f8efe0;
+  outline: none;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.arena-input:focus {
+  border-color: rgba(246, 166, 58, 0.62);
+  background: rgba(0, 0, 0, 0.36);
+  box-shadow: 0 0 0 4px rgba(246, 166, 58, 0.08);
+}
+
+.arena-input::placeholder {
+  color: rgba(248, 239, 224, 0.34);
+}
+
+.light-input {
+  width: 100%;
+  border-radius: 0.95rem;
+  border: 1px solid rgba(23, 18, 13, 0.1);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0.7rem 0.8rem;
+  color: #17120d;
+  outline: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.light-input:focus {
+  border-color: rgba(154, 93, 18, 0.55);
+  box-shadow: 0 0 0 4px rgba(154, 93, 18, 0.1);
+}
+
+.button-primary {
+  border-radius: 999px;
+  background: #f6a63a;
+  padding: 0.78rem 1.05rem;
+  color: #17120d;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    opacity 160ms ease;
+}
+
+.button-primary:hover:not(:disabled) {
+  background: #ffc46a;
+  transform: translateY(-1px);
+}
+
+.button-primary:disabled {
+  opacity: 0.55;
+}
+
+.button-secondary {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.78rem 1.05rem;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.78rem;
+  font-weight: 800;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease,
+    background 160ms ease,
+    opacity 160ms ease;
+}
+
+.button-secondary:hover:not(:disabled) {
+  border-color: rgba(246, 166, 58, 0.45);
+  background: rgba(246, 166, 58, 0.08);
+  color: #fff;
+}
+
+.button-secondary:disabled {
+  opacity: 0.4;
+}
+
+.label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+article,
+aside,
+section {
+  animation: panel-in 420ms ease both;
 }
